@@ -13,12 +13,16 @@ def billing():
         app.addFlashLabel("Enter the item")
     else:        
         print(test,tests)
-        app.addMessage("output" + str(count),test + """  """ + tests)
-        count +=1
+        testss = test + " testing ok" + " " + tests
+        #app.addMessage("output" + str(count),test + """  """ + tests)
+  #      app.textArea("output", testss ,end=True)
+        app.setTextArea("output",testss + "\n")
+#        count +=1
          
 app = gui()
 app.addLabel("Dash Board")
 app.addAutoEntry("item",outp)
 app.addEntry("price")
 app.addButton("select",billing)
+app.addScrolledTextArea("output")
 app.go()
